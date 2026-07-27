@@ -303,11 +303,11 @@
 
         // Initial Local State Default
         window.dataMBG = {
-            X: abjad.map(h => ({ nama: `X-${h}`, jml: 46 })),
-            XI: abjad.map(h => ({ nama: `XI-${h}`, jml: 46 })),
-            XII: abjad.map(h => ({ nama: `XII-${h}`, jml: 46 })),
-            MatpilRabu: Array.from({length: 15}, () => ({ nama: '', jml: 0 })),
-            MatpilKamis: Array.from({length: 15}, () => ({ nama: '', jml: 0 })),
+            X: abjad.map(h => ({ nama: `X-${h}`, jml: '' })),
+            XI: abjad.map(h => ({ nama: `XI-${h}`, jml: '' })),
+            XII: abjad.map(h => ({ nama: `XII-${h}`, jml: '' })),
+            MatpilRabu: Array.from({length: 15}, () => ({ nama: '', jml: '' })),
+            MatpilKamis: Array.from({length: 15}, () => ({ nama: '', jml: '' })),
             Realisasi: Array(12).fill(false)
         };
 
@@ -379,7 +379,7 @@
                         <label class="font-bold text-slate-700 text-sm min-w-[3.5rem]">${item.nama}</label>
                         <input type="number" min="0" value="${item.jml}" 
                             class="w-full px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-center font-semibold text-sm bg-slate-50 focus:bg-white" 
-                            onchange="window.updateData('${window.currentTabReguler}', ${index}, 'jml', parseInt(this.value) || 0)">
+                            onchange="window.updateData('${window.currentTabReguler}', ${index}, 'jml', this.value === '' ? '' : parseInt(this.value))">
                     </div>
                 `;
             });
@@ -413,7 +413,7 @@
                             onchange="window.updateData('${window.currentTabMatpil}', ${index}, 'nama', this.value)">
                         <input type="number" min="0" value="${item.jml}" placeholder="Jml"
                             class="w-20 md:w-28 px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-center font-semibold text-sm bg-slate-50 focus:bg-white" 
-                            onchange="window.updateData('${window.currentTabMatpil}', ${index}, 'jml', parseInt(this.value) || 0)">
+                            onchange="window.updateData('${window.currentTabMatpil}', ${index}, 'jml', this.value === '' ? '' : parseInt(this.value))">
                     </div>
                 `;
             });
