@@ -23,7 +23,7 @@
             background-color: #f8fafc;
         }
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
@@ -48,117 +48,117 @@
         }
     </style>
 </head>
-<body class="h-screen w-full overflow-hidden text-slate-800">
+<body class="h-screen w-full overflow-hidden text-slate-800 flex flex-col">
 
-    <div id="login-view" class="flex h-full w-full items-center justify-center bg-slate-900 absolute inset-0 z-50">
-        <div class="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-md fade-in mx-4">
-            <div class="text-center mb-8">
-                <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-shield-halved text-2xl text-indigo-600"></i>
+    <div id="login-view" class="flex h-full w-full items-center justify-center bg-slate-900 absolute inset-0 z-50 p-4">
+        <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-2xl w-full max-w-md fade-in">
+            <div class="text-center mb-6 sm:mb-8">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-shield-halved text-xl sm:text-2xl text-indigo-600"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-slate-800">Login Administrasi Pelayanan Gizi SMAN 2 Cianjur</h2>
-                <p class="text-slate-500 text-sm mt-2">Silakan masuk untuk melanjutkan</p>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Login Administrasi Pelayanan Gizi SMAN 2 Cianjur</h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2">Silakan masuk untuk melanjutkan</p>
             </div>
             
             <form onsubmit="handleLogin(event)">
-                <div class="mb-5">
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Username</label>
+                <div class="mb-4 sm:mb-5">
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 mb-2">Username</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <i class="fa-solid fa-user text-slate-400"></i>
+                            <i class="fa-solid fa-user text-slate-400 text-sm"></i>
                         </div>
-                        <input type="text" id="username" class="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all" placeholder="Masukkan admin" required value="admin">
+                        <input type="text" id="username" class="w-full pl-10 pr-4 py-2.5 sm:py-3 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all" placeholder="Masukkan admin" required value="admin">
                     </div>
                 </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Password</label>
+                <div class="mb-5 sm:mb-6">
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 mb-2">Password</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <i class="fa-solid fa-lock text-slate-400"></i>
+                            <i class="fa-solid fa-lock text-slate-400 text-sm"></i>
                         </div>
-                        <input type="password" id="password" class="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all" placeholder="Masukkan admin123" required value="admin123">
+                        <input type="password" id="password" class="w-full pl-10 pr-4 py-2.5 sm:py-3 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all" placeholder="Masukkan admin123" required value="admin123">
                     </div>
                 </div>
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-lg shadow-indigo-200">
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 sm:py-3 text-sm rounded-lg transition-colors shadow-lg shadow-indigo-200">
                     Masuk
                 </button>
             </form>
         </div>
     </div>
 
-    <div id="app-view" class="hidden h-full flex flex-col md:flex-row bg-slate-100 relative">
+    <div id="app-view" class="hidden h-full flex flex-row bg-slate-100 relative overflow-hidden flex-1">
         
         <!-- Sidebar Menu -->
-        <aside id="sidebar" class="w-72 bg-slate-900 text-white flex flex-col shadow-xl flex-shrink-0 z-40 relative">
-            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+        <aside id="sidebar" class="w-64 sm:w-72 bg-slate-900 text-white flex flex-col shadow-xl flex-shrink-0 z-40 relative h-full">
+            <div class="p-4 sm:p-6 border-b border-slate-800 flex items-center justify-between">
                 <div class="flex items-center gap-3 overflow-hidden">
-                    <i class="fa-solid fa-boxes-packing text-2xl text-indigo-400 flex-shrink-0"></i>
-                    <h1 class="text-xl font-bold tracking-wide truncate">Dashboard</h1>
+                    <i class="fa-solid fa-boxes-packing text-xl sm:text-2xl text-indigo-400 flex-shrink-0"></i>
+                    <h1 class="text-base sm:text-xl font-bold tracking-wide truncate">Dashboard</h1>
                 </div>
                 <button onclick="toggleSidebar()" class="text-slate-400 hover:text-white transition-colors p-1 rounded md:hidden">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
             
-            <nav class="flex-1 py-4 flex flex-col gap-1 px-3 overflow-y-auto">
-                <button onclick="switchMenu('menu-reguler', this)" class="nav-btn active-nav w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all bg-indigo-600 text-white shadow-md">
-                    <i class="fa-solid fa-pen-to-square w-5 flex-shrink-0"></i> <span class="nav-text">1. Input Data Reguler</span>
+            <nav class="flex-1 py-3 sm:py-4 flex flex-col gap-1 px-3 overflow-y-auto">
+                <button onclick="switchMenu('menu-reguler', this)" class="nav-btn active-nav w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-left transition-all bg-indigo-600 text-white shadow-md text-xs sm:text-sm font-medium">
+                    <i class="fa-solid fa-pen-to-square w-5 flex-shrink-0 text-center"></i> <span class="truncate">1. Input Data Reguler</span>
                 </button>
-                <button onclick="switchMenu('menu-matpil', this)" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
-                    <i class="fa-solid fa-book-open w-5 flex-shrink-0"></i> <span class="nav-text">2. Input Data Matpil</span>
+                <button onclick="switchMenu('menu-matpil', this)" class="nav-btn w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all text-xs sm:text-sm font-medium">
+                    <i class="fa-solid fa-book-open w-5 flex-shrink-0 text-center"></i> <span class="truncate">2. Input Data Matpil</span>
                 </button>
-                <button onclick="switchMenu('menu-realisasi', this)" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
-                    <i class="fa-solid fa-list-check w-5 flex-shrink-0"></i> <span class="nav-text">3. Ceklis Realisasi</span>
+                <button onclick="switchMenu('menu-realisasi', this)" class="nav-btn w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all text-xs sm:text-sm font-medium">
+                    <i class="fa-solid fa-list-check w-5 flex-shrink-0 text-center"></i> <span class="truncate">3. Ceklis Realisasi</span>
                 </button>
-                <button onclick="switchMenu('menu-kontrol', this)" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
-                    <i class="fa-regular fa-file-excel w-5 flex-shrink-0"></i> <span class="nav-text">4. Lembar Kontrol</span>
+                <button onclick="switchMenu('menu-kontrol', this)" class="nav-btn w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all text-xs sm:text-sm font-medium">
+                    <i class="fa-regular fa-file-excel w-5 flex-shrink-0 text-center"></i> <span class="truncate">4. Lembar Kontrol</span>
                 </button>
             </nav>
             
-            <div class="p-4 border-t border-slate-800">
-                <button onclick="handleLogout()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white rounded-lg transition-all">
-                    <i class="fa-solid fa-arrow-right-from-bracket flex-shrink-0"></i> <span class="nav-text">Logout</span>
+            <div class="p-3 sm:p-4 border-t border-slate-800">
+                <button onclick="handleLogout()" class="w-full flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white rounded-lg transition-all text-xs sm:text-sm font-medium">
+                    <i class="fa-solid fa-arrow-right-from-bracket flex-shrink-0"></i> <span class="truncate">Logout</span>
                 </button>
             </div>
         </aside>
 
         <!-- Main Workspace -->
-        <main class="flex-1 overflow-y-auto p-4 md:p-8 relative flex flex-col">
+        <main class="flex-1 overflow-y-auto p-3 sm:p-6 md:p-8 relative flex flex-col bg-slate-100">
             
             <!-- Topbar Controller for Sidebar Toggle -->
-            <div class="mb-6 flex items-center justify-between bg-white px-4 py-3 rounded-xl shadow-sm border border-slate-200">
-                <button onclick="toggleSidebar()" class="flex items-center justify-center text-slate-600 hover:text-indigo-600 font-medium transition-colors w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50" title="Buka/Tutup Sidebar">
-                    <i class="fa-solid fa-bars text-lg"></i>
+            <div class="mb-4 sm:mb-6 flex items-center justify-between bg-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl shadow-sm border border-slate-200">
+                <button onclick="toggleSidebar()" class="flex items-center justify-center text-slate-600 hover:text-indigo-600 transition-colors w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50" title="Buka/Tutup Sidebar">
+                    <i class="fa-solid fa-bars text-base sm:text-lg"></i>
                 </button>
-                <div class="text-xs font-semibold text-indigo-700 bg-indigo-50 px-3 py-1.5 rounded-full border border-indigo-100 flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> SMAN 2 Cianjur - Admin Pelayanan Gizi
+                <div class="text-[11px] sm:text-xs font-semibold text-indigo-700 bg-indigo-50 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-indigo-100 flex items-center gap-1.5 sm:gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"></i></span> <span class="truncate">SMAN 2 Cianjur - Admin Pelayanan Gizi</span>
                 </div>
             </div>
 
             <!-- MENU 1: INPUT DATA REGULER -->
-            <div id="menu-reguler" class="page-content fade-in max-w-5xl mx-auto w-full">
+            <div id="menu-reguler" class="page-content fade-in max-w-6xl mx-auto w-full">
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="border-b border-slate-200 bg-slate-50 px-6 py-4 flex items-center justify-between">
+                    <div class="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between gap-4">
                         <div>
-                            <h3 class="text-lg font-semibold text-slate-800">Formulir Data Kelas Reguler</h3>
-                            <p class="text-sm text-slate-500 mt-1">Kelola data jumlah siswa untuk kelas X, XI, dan XII.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-800">Formulir Data Kelas Reguler</h3>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Kelola data jumlah siswa untuk kelas X, XI, dan XII.</p>
                         </div>
-                        <i class="fa-solid fa-users text-3xl text-slate-200"></i>
+                        <i class="fa-solid fa-users text-2xl sm:text-3xl text-slate-200 hidden sm:block"></i>
                     </div>
                     
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-4">
-                            <button onclick="changeTabReguler('X')" id="tab-reg-X" class="tab-btn active px-4 py-2 rounded-md font-medium text-sm border bg-indigo-600 text-white border-indigo-600">Kelas X</button>
-                            <button onclick="changeTabReguler('XI')" id="tab-reg-XI" class="tab-btn px-4 py-2 rounded-md font-medium text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200">Kelas XI</button>
-                            <button onclick="changeTabReguler('XII')" id="tab-reg-XII" class="tab-btn px-4 py-2 rounded-md font-medium text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200">Kelas XII</button>
+                    <div class="p-4 sm:p-6">
+                        <div class="flex flex-wrap gap-2 mb-5 sm:mb-6 border-b border-slate-200 pb-3 sm:pb-4">
+                            <button onclick="changeTabReguler('X')" id="tab-reg-X" class="tab-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-indigo-600 text-white border-indigo-600">Kelas X</button>
+                            <button onclick="changeTabReguler('XI')" id="tab-reg-XI" class="tab-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200">Kelas XI</button>
+                            <button onclick="changeTabReguler('XII')" id="tab-reg-XII" class="tab-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200">Kelas XII</button>
                         </div>
 
-                        <div class="flex items-center justify-between mb-4">
-                            <label id="label-grid-reguler" class="block text-sm font-semibold text-slate-700">Jumlah Siswa - Kelas X</label>
-                            <span class="text-xs font-medium bg-indigo-100 text-indigo-700 px-2 py-1 rounded">Autosave Aktif</span>
+                        <div class="flex items-center justify-between mb-3 sm:mb-4">
+                            <label id="label-grid-reguler" class="block text-xs sm:text-sm font-semibold text-slate-700">Jumlah Siswa - Kelas X</label>
+                            <span class="text-[10px] sm:text-xs font-medium bg-indigo-100 text-indigo-700 px-2 py-0.5 sm:py-1 rounded">Autosave Aktif</span>
                         </div>
                         
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="grid-input-reguler">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4" id="grid-input-reguler">
                             <!-- Input Reguler Muncul Disini -->
                         </div>
                     </div>
@@ -166,29 +166,29 @@
             </div>
 
             <!-- MENU 2: INPUT DATA MATPIL -->
-            <div id="menu-matpil" class="page-content hidden fade-in max-w-5xl mx-auto w-full">
+            <div id="menu-matpil" class="page-content hidden fade-in max-w-6xl mx-auto w-full">
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="border-b border-slate-200 bg-slate-50 px-6 py-4 flex items-center justify-between">
+                    <div class="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between gap-4">
                         <div>
-                            <h3 class="text-lg font-semibold text-slate-800">Formulir Data Matpil (15 Baris)</h3>
-                            <p class="text-sm text-slate-500 mt-1">Kelola data mata pelajaran pilihan untuk hari Rabu dan Kamis.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-800">Formulir Data Matpil (15 Baris)</h3>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Kelola data mata pelajaran pilihan untuk hari Rabu dan Kamis.</p>
                         </div>
-                        <i class="fa-solid fa-book-open-reader text-3xl text-slate-200"></i>
+                        <i class="fa-solid fa-book-open-reader text-2xl sm:text-3xl text-slate-200 hidden sm:block"></i>
                     </div>
                     
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-4">
-                            <button onclick="changeTabMatpil('MatpilRabu')" id="tab-mat-MatpilRabu" class="tab-btn active px-4 py-2 rounded-md font-medium text-sm border bg-indigo-600 text-white border-indigo-600">Matpil Rabu</button>
-                            <button onclick="changeTabMatpil('MatpilKamis')" id="tab-mat-MatpilKamis" class="tab-btn px-4 py-2 rounded-md font-medium text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200">Matpil Kamis</button>
+                    <div class="p-4 sm:p-6">
+                        <div class="flex flex-wrap gap-2 mb-5 sm:mb-6 border-b border-slate-200 pb-3 sm:pb-4">
+                            <button onclick="changeTabMatpil('MatpilRabu')" id="tab-mat-MatpilRabu" class="tab-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-indigo-600 text-white border-indigo-600">Matpil Rabu</button>
+                            <button onclick="changeTabMatpil('MatpilKamis')" id="tab-mat-MatpilKamis" class="tab-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200">Matpil Kamis</button>
                         </div>
 
-                        <div class="flex items-center justify-between mb-4">
-                            <label id="label-grid-matpil" class="block text-sm font-semibold text-slate-700">Daftar Mapel & Siswa - Matpil Rabu</label>
-                            <span class="text-xs font-medium bg-indigo-100 text-indigo-700 px-2 py-1 rounded">15 Baris Tersedia</span>
+                        <div class="flex items-center justify-between mb-3 sm:mb-4">
+                            <label id="label-grid-matpil" class="block text-xs sm:text-sm font-semibold text-slate-700">Daftar Mapel & Siswa - Matpil Rabu</label>
+                            <span class="text-[10px] sm:text-xs font-medium bg-indigo-100 text-indigo-700 px-2 py-0.5 sm:py-1 rounded">15 Baris Tersedia</span>
                         </div>
                         
                         <!-- List 15 Baris Matpil -->
-                        <div class="flex flex-col gap-3" id="list-input-matpil">
+                        <div class="grid grid-cols-1 xl:grid-cols-2 gap-3" id="list-input-matpil">
                             <!-- Input Matpil Muncul Disini -->
                         </div>
                     </div>
@@ -198,15 +198,15 @@
             <!-- MENU 3: REALISASI -->
             <div id="menu-realisasi" class="page-content hidden fade-in max-w-3xl mx-auto w-full">
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="border-b border-slate-200 bg-slate-50 px-6 py-4">
-                        <h3 class="text-lg font-semibold text-slate-800">Ceklis Realisasi Bulanan</h3>
-                        <p class="text-sm text-slate-500 mt-1">Tandai bulan yang telah selesai direalisasikan.</p>
+                    <div class="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-3.5 sm:py-4">
+                        <h3 class="text-base sm:text-lg font-semibold text-slate-800">Ceklis Realisasi Bulanan</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Tandai bulan yang telah selesai direalisasikan.</p>
                     </div>
-                    <form onsubmit="saveRealisasi(event)" class="p-6">
-                        <div id="checkbox-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <form onsubmit="saveRealisasi(event)" class="p-4 sm:p-6">
+                        <div id="checkbox-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                             <!-- Digenerate via JS -->
                         </div>
-                        <button type="submit" class="w-full px-5 py-2.5 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-sm">
+                        <button type="submit" class="w-full px-4 sm:px-5 py-2.5 bg-indigo-600 text-white font-medium text-xs sm:text-sm rounded-lg hover:bg-indigo-700 transition-colors shadow-sm">
                             Simpan Ceklis
                         </button>
                     </form>
@@ -214,22 +214,22 @@
             </div>
 
             <!-- MENU 4: KONTROL -->
-            <div id="menu-kontrol" class="page-content hidden fade-in max-w-2xl mx-auto w-full">
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center">
-                    <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fa-solid fa-file-excel text-4xl text-emerald-600"></i>
+            <div id="menu-kontrol" class="page-content hidden fade-in max-w-xl mx-auto w-full">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8 text-center">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5 sm:mb-6">
+                        <i class="fa-solid fa-file-excel text-3xl sm:text-4xl text-emerald-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Buat Lembar Kontrol Realisasi</h3>
-                    <p class="text-slate-500 mb-6 max-w-md mx-auto">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-2">Buat Lembar Kontrol Realisasi</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mb-5 sm:mb-6 max-w-md mx-auto">
                         Menghasilkan file Excel (.XLSX) dengan format SMAN 2 Cianjur.<br>
-                        <span class="inline-block mt-2 px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded text-sm font-medium">
+                        <span class="inline-block mt-2 px-2.5 sm:px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded text-xs sm:text-sm font-medium">
                             <i class="fa-solid fa-print"></i> Kertas: Legal | Orientasi: Landscape
                         </span>
                     </p>
 
-                    <div class="max-w-xs mx-auto mb-8 text-left">
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Pilih Kelompok Cetak</label>
-                        <select id="kategori-excel" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none font-medium bg-slate-50">
+                    <div class="max-w-xs mx-auto mb-6 sm:mb-8 text-left">
+                        <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">Pilih Kelompok Cetak</label>
+                        <select id="kategori-excel" class="w-full px-3.5 sm:px-4 py-2 sm:py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none font-medium text-xs sm:text-sm bg-slate-50">
                             <optgroup label="Data Reguler">
                                 <option value="X">Kelas X (A - L)</option>
                                 <option value="XI">Kelas XI (A - L)</option>
@@ -242,16 +242,16 @@
                         </select>
                     </div>
                     
-                    <button onclick="generateXLS()" id="btn-xls" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg shadow-md transition-all flex items-center gap-3 mx-auto">
+                    <button onclick="generateXLS()" id="btn-xls" class="px-6 sm:px-8 py-2.5 sm:py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs sm:text-sm rounded-lg shadow-md transition-all flex items-center justify-center gap-2.5 sm:gap-3 mx-auto">
                         <i class="fa-solid fa-download"></i> Generate Excel (.XLSX)
                     </button>
                 </div>
             </div>
 
             <div id="toast" class="fixed top-5 right-5 transform transition-all duration-300 translate-x-full opacity-0 z-50">
-                <div class="bg-slate-800 text-white px-6 py-3 rounded-lg shadow-xl flex items-center gap-3">
+                <div class="bg-slate-800 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg shadow-xl flex items-center gap-3">
                     <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400"></i>
-                    <span id="toast-msg" class="font-medium text-sm">Pesan disini</span>
+                    <span id="toast-msg" class="font-medium text-xs sm:text-sm">Pesan disini</span>
                 </div>
             </div>
         </main>
@@ -317,9 +317,9 @@
             document.getElementById(menuId).classList.remove('hidden');
 
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.className = 'nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all';
+                btn.className = 'nav-btn w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-left text-slate-400 hover:bg-slate-800 hover:text-white transition-all text-xs sm:text-sm font-medium';
             });
-            btnElement.className = 'nav-btn active-nav w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all bg-indigo-600 text-white shadow-md';
+            btnElement.className = 'nav-btn active-nav w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-left transition-all bg-indigo-600 text-white shadow-md text-xs sm:text-sm font-medium';
         }
 
         window.showToast = function(message, type = 'success') {
@@ -383,9 +383,9 @@
             ['X', 'XI', 'XII'].forEach(k => {
                 const btn = document.getElementById(`tab-reg-${k}`);
                 if(k === kategori) {
-                    btn.className = 'tab-btn active px-4 py-2 rounded-md font-medium text-sm border bg-indigo-600 text-white border-indigo-600';
+                    btn.className = 'tab-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-indigo-600 text-white border-indigo-600';
                 } else {
-                    btn.className = 'tab-btn px-4 py-2 rounded-md font-medium text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200';
+                    btn.className = 'tab-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200';
                 }
             });
             document.getElementById('label-grid-reguler').textContent = `Jumlah Siswa - Kelas ${kategori}`;
@@ -397,10 +397,10 @@
             grid.innerHTML = '';
             window.dataMBG[window.currentTabReguler].forEach((item, index) => {
                 grid.innerHTML += `
-                    <div class="bg-white p-3 rounded-lg border border-slate-200 flex items-center justify-between gap-3 shadow-sm hover:border-indigo-400">
-                        <label class="font-bold text-slate-700 text-sm min-w-[3.5rem]">${item.nama}</label>
+                    <div class="bg-white p-2.5 sm:p-3 rounded-lg border border-slate-200 flex items-center justify-between gap-3 shadow-sm hover:border-indigo-400">
+                        <label class="font-bold text-slate-700 text-xs sm:text-sm min-w-[3.5rem]">${item.nama}</label>
                         <input type="number" min="0" value="${item.jml}" 
-                            class="w-full px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-center font-semibold text-sm bg-slate-50 focus:bg-white" 
+                            class="w-full px-2.5 sm:px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-center font-semibold text-xs sm:text-sm bg-slate-50 focus:bg-white" 
                             onchange="window.updateData('${window.currentTabReguler}', ${index}, 'jml', this.value === '' ? '' : parseInt(this.value))">
                     </div>
                 `;
@@ -413,9 +413,9 @@
             ['MatpilRabu', 'MatpilKamis'].forEach(k => {
                 const btn = document.getElementById(`tab-mat-${k}`);
                 if(k === kategori) {
-                    btn.className = 'tab-btn active px-4 py-2 rounded-md font-medium text-sm border bg-indigo-600 text-white border-indigo-600';
+                    btn.className = 'tab-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-indigo-600 text-white border-indigo-600';
                 } else {
-                    btn.className = 'tab-btn px-4 py-2 rounded-md font-medium text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200';
+                    btn.className = 'tab-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium text-xs sm:text-sm border bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200';
                 }
             });
             const lbl = kategori === 'MatpilRabu' ? 'Rabu' : 'Kamis';
@@ -428,13 +428,13 @@
             list.innerHTML = '';
             window.dataMBG[window.currentTabMatpil].forEach((item, index) => {
                 list.innerHTML += `
-                    <div class="flex items-center gap-3 bg-white p-2 md:p-3 rounded-lg border border-slate-200 shadow-sm hover:border-indigo-400 transition-colors">
-                        <span class="font-bold text-slate-400 w-6 text-right">${index + 1}.</span>
+                    <div class="flex items-center gap-2 sm:gap-3 bg-white p-2 sm:p-2.5 rounded-lg border border-slate-200 shadow-sm hover:border-indigo-400 transition-colors">
+                        <span class="font-bold text-slate-400 w-5 sm:w-6 text-right text-xs sm:text-sm">${index + 1}.</span>
                         <input type="text" value="${item.nama}" placeholder="Nama Mata Pelajaran..."
-                            class="flex-1 px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-semibold text-slate-700 bg-slate-50 focus:bg-white"
+                            class="flex-1 px-2.5 sm:px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-slate-50 focus:bg-white min-w-0"
                             onchange="window.updateData('${window.currentTabMatpil}', ${index}, 'nama', this.value)">
                         <input type="number" min="0" value="${item.jml}" placeholder="Jml"
-                            class="w-20 md:w-28 px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-center font-semibold text-sm bg-slate-50 focus:bg-white" 
+                            class="w-16 sm:w-20 md:w-24 px-2 sm:px-3 py-1.5 border border-slate-300 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-center font-semibold text-xs sm:text-sm bg-slate-50 focus:bg-white flex-shrink-0" 
                             onchange="window.updateData('${window.currentTabMatpil}', ${index}, 'jml', this.value === '' ? '' : parseInt(this.value))">
                     </div>
                 `;
@@ -449,10 +449,10 @@
             months.forEach((month, index) => {
                 const isChecked = window.dataMBG.Realisasi[index] ? 'checked' : '';
                 cbContainer.innerHTML += `
-                    <div class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg hover:border-indigo-500 transition-colors">
-                        <input type="checkbox" id="bulan-${index}" class="w-5 h-5 text-indigo-600 rounded cursor-pointer" 
+                    <div class="flex items-center gap-3 p-2.5 sm:p-3 bg-white border border-slate-200 rounded-lg hover:border-indigo-500 transition-colors">
+                        <input type="checkbox" id="bulan-${index}" class="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 rounded cursor-pointer flex-shrink-0" 
                             ${isChecked} onchange="window.updateData('Realisasi', ${index}, 'value', this.checked)">
-                        <label for="bulan-${index}" class="text-sm font-medium text-slate-700 cursor-pointer w-full">${month}</label>
+                        <label for="bulan-${index}" class="text-xs sm:text-sm font-medium text-slate-700 cursor-pointer w-full truncate">${month}</label>
                     </div>
                 `;
             });
